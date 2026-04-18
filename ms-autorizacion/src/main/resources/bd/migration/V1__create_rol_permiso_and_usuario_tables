@@ -13,10 +13,10 @@ CREATE TABLE permiso (
     descripcion VARCHAR(100));
 
 CREATE TABLE usuario_rol (
-    usuario_id BIGINT, rol_id BIGINT, 
-    PRIMARY KEY(usuario_id,rol_id), 
-    FOREIGN KEY(usuario_id) REFERENCES usuarios(id), 
-    FOREIGN KEY(rol_id) REFERENCES roles(id));
+    id_usuario BIGINT, id_rol BIGINT, 
+    PRIMARY KEY(id_usuario, id_rol), 
+    FOREIGN KEY(id_usuario) REFERENCES usuario(id), 
+    FOREIGN KEY(id_rol) REFERENCES rol(id));
 
 CREATE TABLE rol_permiso (
     id_rol BIGINT, id_permiso BIGINT, 
