@@ -1,0 +1,17 @@
+INSERT INTO permiso(codigo, descripcion) VALUES 
+('ASIGNAR_ROLES','Asignar roles y permisos'),
+('VALIDAR_DECLARACIONES','Validar declaraciones juradas del SAG'),
+('VALIDAR_SALIDAS_TEMPORALES','Validar formularios de Salida y Admisión Temporal de Vehículos Acuerdo Chileno-argentino');
+
+INSERT INTO rol(nombre) VALUES 
+('ADMIN'),
+('FUNC_SAG'),
+('FUNC_PDI');
+
+INSERT INTO rol_permiso VALUES 
+(1,1),
+(1,2),
+(1,3),
+(2,1),
+(2,2),
+(3,1);

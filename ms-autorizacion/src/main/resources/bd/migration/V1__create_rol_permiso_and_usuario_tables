@@ -1,0 +1,25 @@
+CREATE TABLE usuario (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY, 
+    username VARCHAR(10) UNIQUE NOT NULL, 
+    activo BOOLEAN DEFAULT TRUE);
+
+CREATE TABLE rol (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY, 
+    nombre VARCHAR(30) UNIQUE NOT NULL);
+
+CREATE TABLE permiso (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY, 
+    codigo VARCHAR(30) UNIQUE NOT NULL, 
+    descripcion VARCHAR(100));
+
+CREATE TABLE usuario_rol (
+    id_usuario BIGINT, id_rol BIGINT, 
+    PRIMARY KEY(id_usuario, id_rol), 
+    FOREIGN KEY(id_usuario) REFERENCES usuario(id), 
+    FOREIGN KEY(id_rol) REFERENCES rol(id));
+
+CREATE TABLE rol_permiso (
+    id_rol BIGINT, id_permiso BIGINT, 
+    PRIMARY KEY(id_rol, id_permiso), 
+    FOREIGN KEY(id_rol) REFERENCES rol(id), 
+    FOREIGN KEY(id_permiso) REFERENCES permiso(id));
